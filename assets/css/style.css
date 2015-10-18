@@ -47,7 +47,6 @@ h3 {
 }
 h4 {
     line-height:40px;
-    padding-bottom:40px;
 }
 
 p {
@@ -93,12 +92,21 @@ section {
 .color-white {
    background-color:#fff!important;
 }
+.text-white {
+   color:#fff!important;
+}
 .color-dark {
    background-color:#696969!important;
+}
+.text-dark {
+   color:#696969!important;
 }
 
 .color-light {
    background-color:#E9E9E9!important;
+}
+.text-light {
+   color:#E9E9E9!important;
 }
 
 /*=======================================
