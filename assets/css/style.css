@@ -154,6 +154,22 @@ background-color: #3D3D3D;
 border-color: #3D3D3D;
 }
 
+@media (min-width: 768px) {
+    .navbar-centered .navbar-nav {
+        float: none;
+        text-align: center;
+    }
+    .navbar-centered .navbar-nav > li {
+        float: none;
+    }
+    .navbar-centered .nav > li {
+        display: inline;
+    }
+    .navbar-centered .nav > li > a {
+        display: inline-block;
+    }
+}
+
 /*=======================================
     ABOUT TEAM STYLES
 ==================================================*/
@@ -287,4 +303,34 @@ font-size: 30px;
     color:#fff;
     padding:20px 50px 20px 50px;
     text-align:right;
+}
+
+.transparent-btn{
+
+	background: transparent;
+	color: #F2F2F2;
+        border-color: #F2F2F2;
+
+	/* CSS Transition */
+	-webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-o-transition: background .2s ease-in-out, border .2s ease-in-out;
+	transition: background .2s ease-in-out, border .2s ease-in-out;
+
+
+}
+.transparent-btn:hover{
+
+	background: transparent;
+	color: #696969;
+        border-color: #696969;
+
+	/* CSS Transition */
+	-webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-o-transition: background .2s ease-in-out, border .2s ease-in-out;
+	transition: background .2s ease-in-out, border .2s ease-in-out;
+
 }
