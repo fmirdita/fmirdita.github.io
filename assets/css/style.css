@@ -1,336 +1,247 @@
-﻿/*=============================================================
-    Authour URI: www.binarytheme.com
-    License: Commons Attribution 3.0
-
-    http://creativecommons.org/licenses/by/3.0/
-
-    100% To use For Personal And Commercial Use.
-    IN EXCHANGE JUST GIVE US CREDITS AND TELL YOUR FRIENDS ABOUT US
-   
-    ========================================================  */
-
-
-
-/*=======================================
-    GENERAL STYLES
-==================================================*/
 body {
-          font-family:'Open Sans', sans-serif;
-    font-size:14px;
+	margin: 0;
+	font-family: 'Palanquin', sans-serif;
+    background-color: #ECE8CF;
 }
 
-.nav a {
-    color:#ffffff !important;
-}
-.navbar-header a {
-    color:#ffffff !important;
-    padding-right:100px;
-}
-
-.text-center {
-    text-align:center;
+.top {
+	background-image: url(../img/green_blur.png);
+	height: 450px;
+	width: 100%;
+	background-size: cover;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family:'Open Sans', sans-serif;
+h1, h2, h3 {
+	margin: 0;
 }
 
 h1 {
-    line-height:80px;
-    font-weight:900;
-    font-size:60px;
-    padding:30px 20px 10px 20px;
+	color: white;
+	text-align: center;
+	padding: 10px;
 }
-h3 {
-    line-height:30px;
-    padding-bottom:20px;
+
+h2 {
+	color: #B9F6CA;
 }
-h4 {
-    line-height:40px;
+
+#headshot {
+	width: 400px;
+	margin: 0 auto;
+
+}
+
+.container {
+	width: 100%;
+	text-align: center;
+}
+
+.title h1 {
+	font-size: 48px;
+	position: absolute;
+	width: 100%;
+	padding: 0px;
+}
+
+.title h2 {
+	text-align: center;
+	font-size: 24px;
+	position: absolute;
+	width: 100%;
+	color: white;
+	padding: 0px;
+	margin-top: 80px;
+}
+
+.section {
+	padding-top: 80px;
+	width: 100%;
+	position: relative;
+}
+
+.icon {
+	width: 50px;
+}
+
+.sidebar {
+	position: fixed;
+	right: 10%;
+	top: 2.5%;
+	list-style-type: none;
+	display: block;
+	float: right;
+	z-index: 100;
+}
+
+.sidebar li a img:hover {
+	transition: all .2s ease-in-out;
+	transform: scale(1.3);
+}
+/*navbar*/
+
+.nav {
+	padding-top: 150px;
+	width: 100%;
+}
+
+#nav-bar {
+	position: absolute;
+	z-index: 100;
+	padding: 10px 0;
+	width: 100%;
+	background-color:  #388E3C;
+}
+
+.menu {
+	width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #66BB6A;
+    text-align: center;
+}
+
+.menu li {
+    display: inline-block;
+}
+
+.menu li a {
+	display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.menu li a:hover {
+    background-color: #388E3C ;
+}
+
+/*about*/
+
+.content {
+	text-align: center;
+	margin: auto;
+	width: 450px;
+	background: #66BB6A;
+	color: white;
+	padding: 40px;
+	font-size: 90%;
 }
 
 p {
-    text-align: left;
-    font-weight:300;
-    line-height:30px;
-    text-indent: 5%;
-    padding-left: 5%;
-    padding-right: 5%;
+	text-indent: 20px;
 }
 
-.space-free {
-    height:100px;
+.text {
+	text-align: left;
 }
 
-.g-pad-bottom {
-    padding-bottom:70px;
-}
-.for-full-back {
-     /* IE 8 */
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
 
-  /* IE 5-7 */
-  filter: alpha(opacity=90);
+div.border {
+	position: relative;
+	margin: auto;
+	background:#2E7D32 ;
+	padding: 10px;
+	width: 530px;
 
-  /* Netscape */
-  -moz-opacity: 0.9;
-
-  /* Safari 1.x */
-  -khtml-opacity: 0.9;
-
-  /* Good browsers */
-  opacity: 0.9;
 }
 
-section {
-    padding-top:60px;
+/*EDUCATION*/
+#education, #resume {
+	margin-left: 50px;
+	width: 400px;
 }
 
-/*=======================================
-    COLOR CODES
-==================================================*/
-.color-white {
-   background-color:#fff!important;
-}
-.text-white {
-   color:#fff!important;
-}
-.color-dark {
-   background-color:#696969!important;
-}
-.text-dark {
-   color:#696969!important;
+/*Form*/
+
+form div {
+	padding-bottom: 16px;
+
 }
 
-.color-light {
-   background-color:#E9E9E9!important;
-}
-.text-light {
-   color:#E9E9E9!important;
-}
-
-/*=======================================
-    HEADER STYLES
-==================================================*/
-.head-main {
-    font-size:80px !important;
-    font-weight:900!important;
-    color:#fff!important;
-    padding:180px 20px 10px 20px;
-}
-.head-sub-main {
-    font-size:40px !important;
-    font-weight:600!important;
-    color:#fff!important;
-    padding:5px 20px 10px 20px;
-}
-.head-last {
-    font-size:20px !important;
-    font-weight:300!important;
-    color:#fff!important;
-    padding:5px 20px 100px 20px;
+input {
+	padding-left: 5px;
+	font-size: 100%;
+	width: 195px;
+	height: 40px;
 }
 
-/*=======================================
-    NAVIGATION STYLES
-==================================================*/
-
-
-nav {
-	position: absolute;
-	width: 100%;
-    background: #fff;
-    z-index:99;
-}
-.fixed {
-	position: fixed; 
-	top: 0; 
-	min-height: 50px; 
-	z-index: 99;
+textarea {
+	padding-top: 8px;
+	padding-left: 5px;
+	font-size: 100%;
+    width: 400px;
+    height: 100px;
+    border: none;
 }
 
-.navbar-inverse {
-background-color: #3D3D3D;
-border-color: #3D3D3D;
+input[type="email"] {
+	width: 402px;
 }
 
-@media (min-width: 768px) {
-    .navbar-centered .navbar-nav {
-        float: none;
-        text-align: center;
-    }
-    .navbar-centered .navbar-nav > li {
-        float: none;
-    }
-    .navbar-centered .nav > li {
-        display: inline;
-    }
-    .navbar-centered .nav > li > a {
-        display: inline-block;
-    }
+.input.name {
+	padding-left: 8px;
 }
 
-/*=======================================
-    ABOUT TEAM STYLES
-==================================================*/
-
-.team-member {
-    float: left;
-    position: relative;
-    width: 100%;
-}
-.team-member > img {
-    float: left;
-    width: 100%;
-}
-.team-member > h3 {
-    background: rgba(95, 154, 255, 0.85);
-    bottom: 25px;
-    color:#fff;
-    font-size: 20px;
-    letter-spacing: 1px;
-    line-height: 16px;
-    padding: 15px 0;
-    position: absolute;
-    text-align: center;  
-    width: 100%;
-    
-	-webkit-transition: all 0.3s ease 0s;
-	-moz-transition: all 0.3s ease 0s;
-	-ms-transition: all 0.3s ease 0s;
-	-o-transition: all 0.3s ease 0s;
-	transition: all 0.3s ease 0s;
-}
-.team-member:hover > h3 {
-    background: #000;
-    bottom: -55px;
-    color: #FFFFFF;	
-	-webkit-transition: all 0.3s ease 0s;
-	-moz-transition: all 0.3s ease 0s;
-	-ms-transition: all 0.3s ease 0s;
-	-o-transition: all 0.3s ease 0s;
-	transition: all 0.3s ease 0s;
-}
-
-/*=======================================
-    PRICING STYLES
-==================================================*/
-
-
-.plan {
-    background: #eef1f3;
-    padding: 0 0 15px 0;
-    margin: 30px 0px;
-    list-style: none;
+input#submit {
+    background-color:  #2E7D32 ;
+    border: none;
+    color: white;
     text-align: center;
-  
-    -webkit-transition: all 0.2s ease;
-       -moz-transition: all 0.2s ease;
-         -o-transition: all 0.2s ease;
-            transition: all 0.2s ease;
+    display: inline-block;
+    font-size: 16px;
+    width: 100px;
 }
 
-.plan:hover {
-    -webkit-transform: scale(1.2);
-       -moz-transform: scale(1.2);
-        -ms-transform: scale(1.2);
-         -o-transform: scale(1.2);
-            transform: scale(1.2);
+/*TIMELINE*/
+
+.timeline {
+	background: -webkit-linear-gradient(#ECE8CF,#69F0AE 20%, #69F0AE 80%, #ECE8CF);
+	height: 100%;
+	width: 10px;
+	position: relative;
+	margin-right: 225px;
+	z-index: 99;
+	transform: translate(0, -3%);
+	float: right;
 }
 
-.plan li {
-    padding: 15px 0px;
-    color: #434749;
-    border-top: 1px dashed #000;
+.positioner {
+	width: 50%;
+	height: 100%;
+	position: absolute;
 }
 
-.plan li.plan-head {
-   padding: 15px 0px;
-background-color: #000000;
-color: #FFFFFF;
-line-height: 20px;
-font-size: 20px;
-font-weight: 600;
-border: none;
-   }
-
-.plan li.main-price {
-   padding: 25px 0px;
-background-color: #AA570A;
-color: #fff;
-border: none;
-font-weight: 900;
-font-size: 30px;
+.dot {
+	height: 50px;
+	position: relative;
+	z-index: 100;
+	content: url(../img/dot.png);
+	transform: translate(-80px, 80px);
 }
 
-/*=======================================
-    SERVICE STYLES
-==================================================*/
+/*PROJECT*/
 
+.overlay {
+	width: 50%;
+	height: 80%;
+    padding: 0;
+    margin: auto;
+    position: relative;
+    background-image: url(../img/abuddie1.png);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+}
 
-.service-div {
-	width: 100%;
-	min-height: 100px;
-	background-color: #F2F4F6;
-	box-shadow: none;
-	border: 0;
-    padding:20px;
-	-webkit-border-radius: 20px 20px 10px 10px;
-	-moz-border-radius: 20px 20px 10px 10px;
-	border-radius: 20px 20px 10px 10px;
-    margin-bottom:30px;
-}
-/*=======================================
-    CONTACT STYLES
-==================================================*/
-
-#social-icon a {
-    padding: 3%;
-    color:#616161!important;
-    margin-right:10px;
-}
-.contact-cls {
-    font-size:20px;
-    line-height:40px;
-}
-/*=======================================
-    FOOTER STYLES
-==================================================*/
+/*FOOTER*/
 
 
 #footer {
-    background-color:#000;
-    color:#fff;
-    padding:20px 50px 20px 50px;
+    background-color: #2E7D32;
+    color:#E8F5E9;
+    padding:20px 50px;
     text-align:right;
 }
 
-.transparent-btn{
-
-	background: transparent;
-	color: #F2F2F2;
-        border-color: #F2F2F2;
-
-	/* CSS Transition */
-	-webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
-	-moz-transition: background .2s ease-in-out, border .2s ease-in-out;
-	-ms-transition: background .2s ease-in-out, border .2s ease-in-out;
-	-o-transition: background .2s ease-in-out, border .2s ease-in-out;
-	transition: background .2s ease-in-out, border .2s ease-in-out;
-
-
-}
-.transparent-btn:hover{
-
-	background: transparent;
-	color: #696969;
-        border-color: #696969;
-
-	/* CSS Transition */
-	-webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
-	-moz-transition: background .2s ease-in-out, border .2s ease-in-out;
-	-ms-transition: background .2s ease-in-out, border .2s ease-in-out;
-	-o-transition: background .2s ease-in-out, border .2s ease-in-out;
-	transition: background .2s ease-in-out, border .2s ease-in-out;
-
-}

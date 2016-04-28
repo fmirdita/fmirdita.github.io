@@ -1,0 +1,261 @@
+/* Please read through the provided code below to understand it */
+
+/* QUESTION #3: PLACE SIDEBAR STYLES BELOW */
+.sidebar-container{
+	position: fixed;
+	width: 280px;
+	height: 100%;
+	background-color: black;
+	-webkit-transform: translateX(-280px);
+	-webkit-transition: all 0.3s;
+}
+
+.sidebar-item{
+	font-weight: 700;
+	font-size: 16px;
+	color: white;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+/* QUESTION #4: PLACE CAROUSEL STYLES BELOW */
+.carousel-container{
+	width: 960px;
+	margin: auto;
+	height: 500px;
+	overflow: hidden;
+	position: relative;
+}
+
+#carousel {
+	width: 4800px;
+	height: 100%;
+	margin-left: 0px;
+	-webkit-transition: all 0.3s;
+}
+
+.carousel-item {
+	width: 960px;
+	position: relative;
+	height: 100%;
+	float: left;
+}
+
+#overlay {
+	width: 4800px;
+	background-color: rgba(0,0,0,.5);
+	height: 80%;
+	position: absolute;
+	z-index: 99;
+}
+
+/* QUESTION #5: PLACE "OTHER CSS" STYLES BELOW */
+.sect {
+	height: 500px;
+	position: relative;
+	background-color: #918C6E;
+}
+
+#name-section {
+	background-color: #2bde73;
+}
+
+#major-section {
+	background-color: #8bb2af;
+}
+
+#fact-section {
+	background-color: #fff;
+}
+
+#fact-text {
+	color: black;
+}
+
+
+/* DOCUMENT SET UP */
+
+a {
+	text-decoration: none;
+}
+
+.clear {
+	clear: both;
+}
+
+.img-scaled {
+	width: 100%;
+	height: 100%;
+}
+
+.img-scaled-wh {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+/* YOU DON'T NEED TO UNDERSTAND THE CODE BELOW */
+
+#nav-toggle { 
+	position: absolute; 
+	left: 50%; top: 50%; 
+}
+
+#nav-toggle {
+	padding: 10px 30px 15px 0px; 
+}
+
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+	height: 3px;
+	width: 30px;
+	background: #fff;
+	position: absolute;
+	display: block;
+	content: '';
+}
+
+#nav-toggle span:before {
+	top: -10px; 
+}
+
+#nav-toggle span:after {
+	bottom: -10px;
+}
+
+/* FREEBIES */
+
+/* Styling the Sidebar Button */
+#sidebar-button {
+	position: fixed;
+	z-index: 100;
+	left: 15px;
+	top: 15px;
+	cursor: pointer;
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	-o-transition: all .3s;
+	transition: all .3s;
+} 
+
+/* Overriding default styles on the ul */
+.sidebar-container ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	margin-top: 10px;
+}
+
+.page-wrapper {
+	width: 100%;
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	transition: all .3s;
+	padding-bottom: 80px;
+}
+
+/* Styling for the carousel previous button */
+#carousel-prev {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    left: 60px;
+    top: 50%;
+    margin-top: -30px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    z-index: 100;
+    -webkit-transition: all 0.3s;
+}
+
+/* Styling for the carousel next button */
+#carousel-next {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    right: 60px;
+    top: 50%;
+    margin-top: -30px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    z-index: 100;
+    -webkit-transition: all 0.3s;
+}
+
+/* Styling for the projects and text in each section */
+.project{
+	position: absolute;
+	font-size: 36px;
+	color: white;
+    top: 50%;
+    left: 50%;
+    z-index: 100;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+   	transform: translateX(-50%) translateY(-50%);
+}
+
+.project-container {
+	width: 50%;
+	height: 80%;
+    padding: 0;
+    margin: auto;
+    position: relative;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    z-index: 98;
+}
+
+#abuddie{
+	background-image: url(../img/abuddie1.png);
+}
+
+#pollitik{
+	background-image: url(../img/pollitik.png);
+}
+
+#website{
+	background-size: 100%;
+	background-image: url(../img/website1.png);
+
+}
+
+#pacman{
+	background-image: url(../img/pacman.png);
+}
+
+#block{
+	background-image: url(../img/blocks.jpg);
+}
+
+/* Styling for the description text in each project */
+.description {
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: .2rem;
+	margin-top: 10px;
+	text-align: center;
+}
+
+/* jQuery Manipulation Classes */
+
+.no-scroll {
+	overflow: hidden;
+}
+
+.wrapper-active, .button-active {
+	-webkit-transform: translateX(280px);
+	-moz-transform: translateX(280px);
+	transform: translateX(280px);
+}
+
+.sidebar-active {
+	-webkit-transform: translateX(0px);
+	-moz-transform: translateX(0px);
+	-o-transform: translateX(0px);
+}
