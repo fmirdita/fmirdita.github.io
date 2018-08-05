@@ -3,13 +3,13 @@ $(document).ready(function() {
   nav_top_margin = $('.header').cssNumber('height') - $('nav').cssNumber('height') ;
   $(window).scroll(function () {
 
-    console.log($(window).scrollTop(), nav_top_margin);
+    // console.log($(window).scrollTop(), nav_top_margin);
 
     if ($(window).scrollTop() > nav_top_margin) {
-      $('.navbar').addClass('navbar-fixed');
+      $('.scroll-nav').addClass('navbar-fixed');
     }
     if ($(window).scrollTop() < nav_top_margin) {
-      $('.navbar').removeClass('navbar-fixed');
+      $('.scroll-nav').removeClass('navbar-fixed');
     }
   });
 
