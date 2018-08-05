@@ -45,7 +45,7 @@ jQuery.fn.cssNumber = function(prop){
 var rows=3; // must be an odd number
 var speed=20; // lower is faster
 var reveal=2; // between 0 and 2 only. The higher, the faster the word appears
-var effectalign="center" //enter "center" to center it.
+var effectalign="center"; //enter "center" to center it.
 
 /***********************************************
 * The Matrix Text Effect- by Richard Womersley (http://www.mf2fm.co.uk/rv)
@@ -224,7 +224,7 @@ var letters = Array(256).join(1).split('');
     curr_color %= 6;
   }, 34);
 
-  var rainbow = false;
+  var rainbow = true;
 var draw = function () {
   rain.getContext('2d').fillStyle='rgba(0,0,0,.04)';   // last number controls how fast text fades
   rain.getContext('2d').fillRect(0,0,width,height);
