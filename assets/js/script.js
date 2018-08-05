@@ -224,7 +224,7 @@ var letters = Array(256).join(1).split('');
     curr_color %= 6;
   }, 34);
 
-  var rainbow = true;
+  var rainbow = false;
 var draw = function () {
   rain.getContext('2d').fillStyle='rgba(0,0,0,.04)';   // last number controls how fast text fades
   rain.getContext('2d').fillRect(0,0,width,height);
@@ -237,15 +237,3 @@ var draw = function () {
   });
 };
 setInterval(draw, 33);
-
-var blink = function (eye) {
-  document.getElementById(eye).style.display("block")
-
-  setTimeout(function(){
-    document.getElementById(eye).style.display("none")
-.css("width", "10px");
-  }, 100);
-}
-
-setInterval(blink("open1"), 500);
-setInterval(blink("open2"), 500);
