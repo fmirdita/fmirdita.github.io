@@ -1,84 +1,251 @@
 $(document).ready(function() {
 
-  // QUESTION 6
+  nav_top_margin = $('.header').cssNumber('height') - $('nav').cssNumber('height') ;
+  $(window).scroll(function () {
 
-  //Implement the showing and hiding of the sidebar when the user clicks on #sidebar-button here:
+    console.log($(window).scrollTop(), nav_top_margin);
 
-  var sc = function() {
-
-    if ($('.sidebar-container').hasClass('sidebar-active')) {
-      $('body').removeClass('no-scroll');
-      $('.sidebar-container').removeClass('sidebar-active');
-      $('#sidebar-button').removeClass('button-active');
-      $('.page-wrapper').removeClass('wrapper-active');
-
-    } else {
-      $('.sidebar-container').addClass('sidebar-active');
-      $('#sidebar-button').addClass('button-active');
-      $('.page-wrapper').addClass('wrapper-active');
-      setTimeout(function() {
-        $('body').addClass('no-scroll');
-        }, 300);
+    if ($(window).scrollTop() > nav_top_margin) {
+      $('.navbar').addClass('navbar-fixed');
     }
-  };
-      
-  $('#sidebar-button').click(sc);
-
-  // QUESTION 7
-
-  //Implement the hiding of the sidebar when the user clicks on the page wrapper here:
-
-  $('.page-wrapper').click(function() {
-
-    if ($('.sidebar-container').hasClass('sidebar-active')) {
-      $('body').removeClass('no-scroll');
-      $('.sidebar-container').removeClass('sidebar-active');
-      $('#sidebar-button').removeClass('button-active');
-      $('.page-wrapper').removeClass('wrapper-active');
+    if ($(window).scrollTop() < nav_top_margin) {
+      $('.navbar').removeClass('navbar-fixed');
     }
   });
 
-  // QUESTION 8
-  var val = 0;
+  setInterval( function() {
+    $('#open1').fadeOut().delay(300).fadeIn();
+    $('#open1').removeClass("closed");
+  }, 1500);
 
-  function slide() {
-    var leftMarg = parseInt($('#carousel').css('margin-left').replace("px", ""));
-      if (leftMarg == -3840 && val < 0 ) {
+  setInterval( function() {
+    $('#left_open1').fadeOut().delay(300).fadeIn();
+    $('#left_open1').removeClass("closed");
+  }, 1500);
 
-        $('#carousel').css('margin-left',0);
+  setInterval( function() {
+    $('#open2').fadeOut().delay(300).fadeIn();
+    $('#open2').removeClass("closed");
+  }, 1500);
 
-      } else if (leftMarg == 0 && val > 0) {
-
-        $('#carousel').css('margin-left',-3840);
-
-      } else {
-
-        $('#carousel').css('margin-left',leftMarg + val);
-
-      }
-
-  }
-
-  //Implement the "slide to left" when the user clicks on #carousel-next here
-
-  $('#carousel-next').click( function() {
-    val = -960
-    slide();
-  })
-
-  //Implement the "slide to right" when the user clicks on #carousel-prev here
-
-  $('#carousel-prev').click( function() {
-    val = 960
-    slide();
-  })
-
-
-
-
-  //THIS IS NOT A REQUIRED QUESTION 
-  // EXTRA FOR EXPERTS 
-
-  // Implement a "smooth scroll" when the user clicks on the sidebar links here
+  setInterval( function() {
+    $('#left_open2').fadeOut().delay(900).fadeIn();
+    $('#left_open2').removeClass("closed");
+  }, 1800);
 
 });
+
+jQuery.fn.cssNumber = function(prop){
+    var v = parseInt(this.css(prop),10);
+    return isNaN(v) ? 0 : v;
+};
+
+
+<!--
+var rows=3; // must be an odd number
+var speed=20; // lower is faster
+var reveal=2; // between 0 and 2 only. The higher, the faster the word appears
+var effectalign="center" //enter "center" to center it.
+
+/***********************************************
+* The Matrix Text Effect- by Richard Womersley (http://www.mf2fm.co.uk/rv)
+* This notice must stay intact for use
+* Visit http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+var w3c=document.getElementById && !window.opera;;
+var ie45=document.all && !window.opera;
+var ma_tab, matemp, ma_bod, ma_row, x, y, columns, ma_txt, ma_cho;
+var m_coch=new Array();
+var m_copo=new Array();
+window.onload=function() {
+	if (!w3c && !ie45) return
+  var matrix=(w3c)?document.getElementById("matrix"):document.all["matrix"];
+  ma_txt=(w3c)?matrix.firstChild.nodeValue:matrix.innerHTML;
+  ma_txt=" "+ma_txt+" ";
+  columns=ma_txt.length;
+  if (w3c) {
+    while (matrix.childNodes.length) matrix.removeChild(matrix.childNodes[0]);
+    ma_tab=document.createElement("table");
+    ma_tab.setAttribute("border", 0);
+    ma_tab.setAttribute("align", effectalign);
+    ma_tab.style.backgroundColor="#000000";
+    ma_bod=document.createElement("tbody");
+    for (x=0; x<rows; x++) {
+      ma_row=document.createElement("tr");
+      for (y=0; y<columns; y++) {
+        matemp=document.createElement("td");
+        matemp.setAttribute("id", "Mx"+x+"y"+y);
+        matemp.className="matrix";
+        matemp.appendChild(document.createTextNode(String.fromCharCode(160)));
+        ma_row.appendChild(matemp);
+      }
+      ma_bod.appendChild(ma_row);
+    }
+    ma_tab.appendChild(ma_bod);
+    matrix.appendChild(ma_tab);
+  } else {
+    ma_tab='<ta'+'ble align="'+effectalign+'" border="0" style="background-color:#000000">';
+    for (var x=0; x<rows; x++) {
+      ma_tab+='<t'+'r>';
+      for (var y=0; y<columns; y++) {
+        ma_tab+='<t'+'d class="matrix" id="Mx'+x+'y'+y+'"> </'+'td>';
+      }
+      ma_tab+='</'+'tr>';
+    }
+    ma_tab+='</'+'table>';
+    matrix.innerHTML=ma_tab;
+  }
+  ma_cho=ma_txt;
+  for (x=0; x<columns; x++) {
+    ma_cho+=String.fromCharCode(32+Math.floor(Math.random()*94));
+    m_copo[x]=0;
+  }
+  ma_bod=setInterval("mytricks()", speed);
+}
+
+function mytricks() {
+  x=0;
+  for (y=0; y<columns; y++) {
+    x=x+(m_copo[y]==100);
+    ma_row=m_copo[y]%100;
+    if (ma_row && m_copo[y]<100) {
+      if (ma_row<rows+1) {
+        if (w3c) {
+          matemp=document.getElementById("Mx"+(ma_row-1)+"y"+y);
+          matemp.firstChild.nodeValue=m_coch[y];
+        }
+        else {
+          matemp=document.all["Mx"+(ma_row-1)+"y"+y];
+          matemp.innerHTML=m_coch[y];
+        }
+        matemp.style.color="#33ff66";
+        matemp.style.fontWeight="bold";
+      }
+      if (ma_row>1 && ma_row<rows+2) {
+        matemp=(w3c)?document.getElementById("Mx"+(ma_row-2)+"y"+y):document.all["Mx"+(ma_row-2)+"y"+y];
+        matemp.style.fontWeight="normal";
+        matemp.style.color="#00ff00";
+      }
+      if (ma_row>2) {
+          matemp=(w3c)?document.getElementById("Mx"+(ma_row-3)+"y"+y):document.all["Mx"+(ma_row-3)+"y"+y];
+        matemp.style.color="#009900";
+      }
+      if (ma_row<Math.floor(rows/2)+1) m_copo[y]++;
+      else if (ma_row==Math.floor(rows/2)+1 && m_coch[y]==ma_txt.charAt(y)) zoomer(y);
+      else if (ma_row<rows+2) m_copo[y]++;
+      else if (m_copo[y]<100) m_copo[y]=0;
+    }
+    else if (Math.random()>0.9 && m_copo[y]<100) {
+      m_coch[y]=ma_cho.charAt(Math.floor(Math.random()*ma_cho.length));
+      m_copo[y]++;
+    }
+  }
+  if (x==columns) clearInterval(ma_bod);
+}
+
+function zoomer(ycol) {
+  var mtmp, mtem, ytmp;
+  if (m_copo[ycol]==Math.floor(rows/2)+1) {
+    for (ytmp=0; ytmp<rows; ytmp++) {
+      if (w3c) {
+        mtmp=document.getElementById("Mx"+ytmp+"y"+ycol);
+        mtmp.firstChild.nodeValue=m_coch[ycol];
+      }
+      else {
+        mtmp=document.all["Mx"+ytmp+"y"+ycol];
+        mtmp.innerHTML=m_coch[ycol];
+      }
+      mtmp.style.color="#33ff66";
+      mtmp.style.fontWeight="bold";
+    }
+    if (Math.random()<reveal) {
+      mtmp=ma_cho.indexOf(ma_txt.charAt(ycol));
+      ma_cho=ma_cho.substring(0, mtmp)+ma_cho.substring(mtmp+1, ma_cho.length);
+    }
+    if (Math.random()<reveal-1) ma_cho=ma_cho.substring(0, ma_cho.length-1);
+    m_copo[ycol]+=199;
+    setTimeout("zoomer("+ycol+")", speed);
+  }
+  else if (m_copo[ycol]>200) {
+    if (w3c) {
+      mtmp=document.getElementById("Mx"+(m_copo[ycol]-201)+"y"+ycol);
+      mtem=document.getElementById("Mx"+(200+rows-m_copo[ycol]--)+"y"+ycol);
+    }
+    else {
+      mtmp=document.all["Mx"+(m_copo[ycol]-201)+"y"+ycol];
+      mtem=document.all["Mx"+(200+rows-m_copo[ycol]--)+"y"+ycol];
+    }
+    mtmp.style.fontWeight="normal";
+    mtem.style.fontWeight="normal";
+    setTimeout("zoomer("+ycol+")", speed);
+  }
+  else if (m_copo[ycol]==200) m_copo[ycol]=100+Math.floor(rows/2);
+  if (m_copo[ycol]>100 && m_copo[ycol]<200) {
+    if (w3c) {
+      mtmp=document.getElementById("Mx"+(m_copo[ycol]-101)+"y"+ycol);
+      mtmp.firstChild.nodeValue=String.fromCharCode(160);
+      mtem=document.getElementById("Mx"+(100+rows-m_copo[ycol]--)+"y"+ycol);
+      mtem.firstChild.nodeValue=String.fromCharCode(160);
+    }
+    else {
+      mtmp=document.all["Mx"+(m_copo[ycol]-101)+"y"+ycol];
+      mtmp.innerHTML=String.fromCharCode(160);
+      mtem=document.all["Mx"+(100+rows-m_copo[ycol]--)+"y"+ycol];
+      mtem.innerHTML=String.fromCharCode(160);
+    }
+    setTimeout("zoomer("+ycol+")", speed);
+  }
+}
+// -->
+
+/*******
+http://cssdeck.com/labs/the-matrix
+********/
+
+var width = rain.width = window.screen.width;
+var height = rain.height = $('.header').cssNumber('height');
+var letters = Array(256).join(1).split('');
+
+  var arr = [
+'#F0F',
+'#00F',
+'#0FF',
+'#0F0',
+'#FF0',
+'#F00'
+];
+
+
+
+  var curr_color = 0;
+  setInterval( function() {
+    curr_color += 1;
+    curr_color %= 6;
+  }, 34);
+
+  var rainbow = true;
+var draw = function () {
+  rain.getContext('2d').fillStyle='rgba(0,0,0,.04)';   // last number controls how fast text fades
+  rain.getContext('2d').fillRect(0,0,width,height);
+  rain.getContext('2d').fillStyle= (rainbow) ? arr[curr_color] : '#0F0';
+  letters.map(function(y_pos, index){
+    text = String.fromCharCode(48+Math.random()*2); //1's and 0s
+    x_pos = index * 10; // number indicates text frame width. overlaps < ft size
+    rain.getContext('2d').fillText(text, x_pos, y_pos);
+    letters[index] = (y_pos > 758 + Math.random() * 1e4) ? 0 : y_pos + 10;
+  });
+};
+setInterval(draw, 33);
+
+var blink = function (eye) {
+  document.getElementById(eye).style.display("block")
+
+  setTimeout(function(){
+    document.getElementById(eye).style.display("none")
+.css("width", "10px");
+  }, 100);
+}
+
+setInterval(blink("open1"), 500);
+setInterval(blink("open2"), 500);

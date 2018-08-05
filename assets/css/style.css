@@ -1,218 +1,210 @@
 /*RESET*/
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent;} body {line-height: 1;}ol, ul{list-style:none;} blockquote, q{quotes:none;} blockquote:before, blockquote:after, q:before, q:after{content:'';content:none;} :focus{outline:0;} ins{text-decoration:none;} del{text-decoration:line-through;} table{border-collapse:collapse; border-spacing:0;}
 
-/*MAIN*/
-body { 
-  font-size: 1.05em;
-  line-height: 1.25em;
-  font-family: Helvetica Neue, Helvetica, Arial;
-  background: #f9f9f9;
-  color: #555;
+:root {
+  /* fonts */
+  --primary-font-family: Helvetica Neue, Helvetica, Arial;
+  --primary-text-color: #111111;
+  --secondary-text-color: #7f7f7f;
+
+  --primary-color: #0f0;
+  --secondary-color: #3f6;
+  --ternary-color: #090;
+
+  --rainbow: linear-gradient(to right, rgba(255, 0, 255, 1), rgba(0, 0, 255, 1), rgba(0, 255, 255, 1), rgba(0, 255, 0, 1), rgba(255, 255, 0, 1), rgba(255, 0, 0, 1));
+  --rainbow-vertical: linear-gradient( rgba(255, 0, 255, 1), rgba(0, 0, 255, 1), rgba(0, 255, 255, 1), rgba(0, 255, 0, 1), rgba(255, 255, 0, 1), rgba(255, 0, 0, 1));
+
+  --transparency-value: rgba(256,256,256,.5);
+
+  --cover-height: 100%;
+
+
+}
+
+body {
+  font-size: 1em;
+  font-family: var(--primary-font-family);
+  width: 100%;
+  color: var(--primary-text);
 }
 
 a {
-  color: green;
   text-decoration: none;
-  font-weight: bold;
+  color: inherit;
 }
 
 a:hover {
-
-  color: #f9f9f9;
-
+  color: var(--secondary-text);
 }
 
-header {
-
-  background: rgb(0, 255, 0, 1);
-  width: 100%;
-  height: 76px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  border-bottom: 4px solid green;
-  z-index: 100;
-
+a.selected {
+  color: var(--secondary-text);
 }
 
-#title{
-
-  margin: 20px;
-  float: left;
-  height: 40px;
-  background: url(../img/logo.png) no-repeat center;
-  display: block;
-
+img {
+  height: 100%;
 }
 
 nav {
-  float:right;
-  padding: 20px;  
-
+  font-family:Lucida Console, Courier, Monotype;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  background: var(--primary-color);
+  z-index: 10;
 }
 
-#menu-icon {
-
-  display: none;
-  width: 40px;
-  height: 40px;
-}
-
-a:hover#menu-icon {
-
-  background-color: #f9f9f9;
-  border-radius: 4px 4px 0 0;
-
-}
-
-.bar {
-  width: 35px;
-  height: 3px;
-  margin: auto;
-  margin-top: 7px;
-  background: green;
-}
-
-ul {
-
-  list-style: none;
-
-}
-
-li {
-
+nav li {
   display: inline-block;
-  float: left;
-  padding: 10px
-
+  padding: .5em 0;
+  width: 8em;
 }
 
-.current {
+nav li:hover {
 
-  color: #f9f9f9;
+  background: var(--rainbow);
+  color: white;
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
 
+nav li.divider {
+  width: 0;
+  border-left: 2px solid black;
 }
 
 section {
+  text-align: center;
+  padding: 1em;
+  margin: 1em auto ;
+  min-width: 36em;
 
-  margin: 80px auto 40px;
-  max-width: 980px;
-  position: relative;
-  padding: 20px;
 }
 
-h1 {
+section:nth-child(odd) {
+  background-color: var(--secondary-color);
+  width: 65%;
+}
 
-  font-size: 2em;
-  color: green;
-  line-height: 1.15em;
-  margin: 20px 0 ;
-  font-weight: lighter;
-
+section:nth-child(even) {
+  background-color: var(--ternary-color);
+  width: 60%;
 }
 
 p {
-
-  line-height: 1.45em;
-  margin-bottom: 20px;
-
+  text-align: left;
+  padding: .5em;
+  max-width: 80%;
+  min-width: 35em;
+  margin: auto;
+}
+.header {
+  position: relative;
+  height: var(--cover-height);
+  background: var(--rainbow-vertical);
 }
 
-/* ---- social media ---- */
+.overlay {
+  background: var(--transparency-value);
+  height: var(--cover-height);
+}
 
-ul.media {
-  position: absolute;
-  width: 100%;
+.footer {
+  position: relative;
   text-align: center;
+  background: var(--primary-color);
+  padding: 10px;
   z-index: 10;
-  list-style-type: none;
-  bottom: 10%;
 }
 
-.media li {
-  display: inline-block;
-  padding-right: 5px;
-}
-
-.media li a img:hover {
-  transition: all .2s ease-in-out;
-  transform: scale(1.3);
-}
-
-.icon {
-  width: 50px;
-}
-
-/*MEDIA QUERY*/
-@media only screen and (max-width : 640px) {
-
-  header {
-
-    position: absolute;
-
-  }
-
-  #menu-icon {
-
-    display:inline-block;
-
-  }
-
-  nav {
-
-  float: right;
-
-}
-
-  nav ul, nav:active ul { 
-
-    display: none;
-    position: absolute;
-    padding: 20px;
-    background: #fff;
-    border: 2px solid green;
-    right: 20px;
-    top: 60px;
-    width: 50%;
-    border-radius: 4px 0 4px 4px;
-
-  }
-
-  nav li {
-
-    text-align: center;
-    width: 100%;
-    padding: 10px 0;
-    margin: 0;
-
-  }
-
-  nav li .current {
-    color: #555;
-  }
-
-  nav:hover ul {
-
-    display: block;
-
-  }
-
-
-body{ 
-	width:100%;
-  height: 100%;
-/*  background: radial-gradient(rgba(0,0,0,0) 30%, rgba(255, 0, 255, 1), rgba(0, 0, 255, 1), rgba(0, 255, 255, 1), rgba(0, 255, 0, 1), rgba(255, 255, 0, 1), rgba(255, 0, 0, 1), rgba(0, 0, 0, 0) 70% );
-*/
-}
-
-
-
-/* ---- particles.js container ---- */
-
-#particles-js{
-  position: fixed;
+.cover {
+  text-align: center;
+  position: absolute;
+  top:0;
+  height: var(--cover-height);
   width: 100%;
   height: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-}*/
+}
+
+.navbar-fixed {
+  position: fixed;
+  top: 0;
+  bottom: inherit;
+  margin-top: 0;
+  z-index: 11;
+}
+
+.matrix {
+  font-size:1em;
+  text-align:center;
+  width:1em;
+  padding:0px;
+  margin:0px;
+}
+
+#matrix {
+  font-family:Lucida Console, Courier, Monotype;
+  width: 15em;
+  height: 10px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  margin: auto;
+  z-index: 10;
+}
+
+#rain {
+  position: fixed;
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+}
+
+#sections {
+}
+
+img.eye {
+  height: 80pt;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.eye {
+  position: relative;
+  width: 10em;
+  height: 10em;
+  display: inline-block;
+  text-align: left;
+}
+
+
+.closed {
+  display: none;
+}
+
+#pair1, #pair2 {
+  width: 100%;
+}
+
+.nose {
+  font-size: 5em;
+  width: 100%;
+  margin: auto;
+}
+
+/* #eye2 {
+  position: relative;
+  border: 5px solid red;
+  height: 300px;
+  width: 200px;
+  display: inline-block;
+} */
