@@ -8,41 +8,49 @@
 
   <title>website</title>
 
-  <meta name="description" content="handmade by filip">
+  <meta name="description" content="filip's personal website">
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/flyout-menu.min.css">
 
+  <!-- Flyout bug fix for Chrome -->
+  <script> </script>
+
+  <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 
 
 <body>
+<div id="flyout-menu">
+<ul class="menu" role="menu">
+  <li class="start">
+      <a href="#">
+          <svg preserveAspectRatio="xMidYMid meet" focusable="false" viewBox="-5 -5 34 34">
+              <g><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" fill="white"></path></g>
+          </svg>
+      </a>
+  </li>
+  <li>
+    <ul>
+      <li><a href="#scrollNav-1">About Me</a></li>
+      <li><a href="#scrollNav-2">Education</a></li>
+      <li><a href="#scrollNav-3">Projects</a></li>
+      <li><a href="#scrollNav-4">Contact</a></li>
+    </ul>
+  </li>
+</ul>
+<div class="overlay"></div>
+</div>
 <canvas id="rain"></canvas>
 
 <div class="header">
-
   <div class="cover">
+    <img id="headshot" src="./assets/img/website radial2.png"></img>
     <div id="matrix">Filip Mirdita</div>
 
   </div>
-  <!-- <nav class="navbar">
-    <div id="logo">
-      <img src="assets/img/logo.png"/>
-      <h1 > logo </h1>
-    </div>
-
-    <ul class="menu">
-      <li><a href="#about">About</a></li>
-      <li class="divider"></li>
-      <li><a href="#projects">Projects</a></li>
-      <li class="divider"></li>
-      <li><a href="#blog">Blog</a></li>
-      <li class="divider"></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav> -->
 
 </div>
 
@@ -50,38 +58,51 @@
 
   <h2>About</h2>
 
-  <p> I'm a full-stack software engineer and recent graduate from UC Berkeley, where I majored in Computer Science and Cognitive Science.</p>
-  <p> Lorem ipsum dokinto ino florem doslip feducter lorem.Lorem ipsum dokinto ino florem doslip feducter lorem. Lorem ipsum dokinto ino florem doslip feducter lorem. Dulup dfordl lsidog depopibidy bopbil bod requiles fontvar whaxzumpnol.</p>
-  <p> Lorem ipsum dokinto ino florem doslip feducter lorem.Lorem ipsum dokinto ino florem doslip feducter lorem. Lorem ipsum dokinto ino florem doslip feducter lorem. Dulup dfordl lsidog depopibidy bopbil bod requiles fontvar whaxzumpnol.</p>
-  <p> Lorem ipsum dokinto ino florem doslip feducter lorem.Lorem ipsum dokinto ino florem doslip feducter lorem. Lorem ipsum dokinto ino florem doslip feducter lorem. Dulup dfordl lsidog depopibidy bopbil bod requiles fontvar whaxzumpnol.</p>
+  <p> I'm a full-stack software engineer and recent graduate seeking a full-time position.</p>
+  <p>
+
+  <h2>Education</h2>
+  <p> University of California, Berkeley class of 2018 </p>
+  <p> Bachelor of Arts in Computer Science and Cognitive Science</p>
+  <P> Study Abroad in Paris and Berlin </p>
+  <p> Course list </p>
+
 
   <h2> Projects </h2>
-  <p> Lorem ipsum dokinto ino florem doslip feducter lorem.Lorem ipsum dokinto ino florem doslip feducter lorem. Lorem ipsum dokinto ino florem doslip feducter lorem.</p>
-  <p> Lorem ipsum dokinto ino florem doslip feducter lorem.Lorem ipsum dokinto ino florem doslip feducter lorem. Lorem ipsum dokinto ino florem doslip feducter lorem. Dulup dfordl lsidog depopibidy bopbil bod requiles fontvar whaxzumpnol.</p>
-  <p> Lorem ipsum dokinto ino florem doslip feducter lorem.Lorem ipsum dokinto ino florem doslip feducter lorem. Lorem ipsum dokinto ino florem doslip feducter lorem. Dulup dfordl lsidog depopibidy bopbil bod requiles fontvar whaxzumpnol.</p>
-  <p> Lorem ipsum dokinto ino florem doslip feducter lorem.Lorem ipsum dokinto ino florem doslip feducter lorem. Lorem ipsum dokinto ino florem doslip feducter lorem. Dulup dfordl lsidog depopibidy bopbil bod requiles fontvar whaxzumpnol.</p>
-  <p> Lorem ipsum dokinto ino florem doslip feducter lorem.Lorem ipsum dokinto ino florem doslip feducter lorem. Lorem ipsum dokinto ino florem doslip feducter lorem.</p>
-
-  <h2> Blog </h2>
-  <p> Lorem ipsum dokinto ino florem doslip feducter lorem.Lorem ipsum dokinto ino florem doslip feducter lorem. Lorem ipsum dokinto ino florem doslip feducter lorem.</p>
-  <p> Lorem ipsum dokinto ino florem doslip feducter lorem.Lorem ipsum dokinto ino florem doslip feducter lorem. Lorem ipsum dokinto ino florem doslip feducter lorem. Dulup dfordl lsidog depopibidy bopbil bod requiles fontvar whaxzumpnol.</p>
-  <p> Lorem ipsum dokinto ino florem doslip feducter lorem.Lorem ipsum dokinto ino florem doslip feducter lorem. Lorem ipsum dokinto ino florem doslip feducter lorem. Dulup dfordl lsidog depopibidy bopbil bod requiles fontvar whaxzumpnol.</p>
-  <p> Lorem ipsum dokinto ino florem doslip feducter lorem.Lorem ipsum dokinto ino florem doslip feducter lorem. Lorem ipsum dokinto ino florem doslip feducter lorem. Dulup dfordl lsidog depopibidy bopbil bod requiles fontvar whaxzumpnol.</p>
-  <p> Lorem ipsum dokinto ino florem doslip feducter lorem.Lorem ipsum dokinto ino florem doslip feducter lorem. Lorem ipsum dokinto ino florem doslip feducter lorem.</p>
+  <p> The DatabAIS : Nov 2017 - Present </p>
+  <p> Personal Website : Aug 2018 </p>
+  <p> Secure Drop and Share : Feb 2018  </p> <!--161 Project 2 -->
+  <p> AlzAboutMe : Nov 2016 </p> <!--169 -->
+  <p> Autism Buddy : May 2016 </p>  <!--160 -->
+  <p> Politik : Feb 2016 </p>  <!--160 -->
+  <!-- 168 -->
+  <p> WAN Optimizer : Dec 2016 </p>
+  <p> Routing : Oct 2016</p>
+  <p> Measurement : Nov 2016</p>
+  <p> Chat : Sep 2016 </p>
+  <!-- 188 -->
+  <p> Pacman: Search, Bayes Nets, Classification, Multiagent : July, Aug 2018</p>
+  <!-- 170 -->
+  <p> Sudoku Solver : Apr 2016 </p>
 
   <h2> Contact </h1>
-  <p> Lorem ipsum dokinto ino florem doslip feducter lorem.Lorem ipsum dokinto ino florem doslip feducter lorem. Lorem ipsum dokinto ino florem doslip feducter lorem.</p>
-  <p> Lorem ipsum dokinto ino florem doslip feducter lorem.Lorem ipsum dokinto ino florem doslip feducter lorem. Lorem ipsum dokinto ino florem doslip feducter lorem. Dulup dfordl lsidog depopibidy bopbil bod requiles fontvar whaxzumpnol.</p>
-  <p> Lorem ipsum dokinto ino florem doslip feducter lorem.Lorem ipsum dokinto ino florem doslip feducter lorem. Lorem ipsum dokinto ino florem doslip feducter lorem. Dulup dfordl lsidog depopibidy bopbil bod requiles fontvar whaxzumpnol.</p>
-  <p> Lorem ipsum dokinto ino florem doslip feducter lorem.Lorem ipsum dokinto ino florem doslip feducter lorem. Lorem ipsum dokinto ino florem doslip feducter lorem. Dulup dfordl lsidog depopibidy bopbil bod requiles fontvar whaxzumpnol.</p>
-  <p> Lorem ipsum dokinto ino florem doslip feducter lorem.Lorem ipsum dokinto ino florem doslip feducter lorem. Lorem ipsum dokinto ino florem doslip feducter lorem.</p>
+  <p><a href="mailto:filip.mirdita@gmail.com"> Email: filip.mirdita@gmail.com <a></p>
+  <p><a href="github.com/fmirdita"> Github </a></p>
+  <p><a href="linkedin.com/in/mirditaf"> LinkedIn </a></p>
 
 <!-- END OF CONTENT -->
 
 </article>
 
 <div class="footer">
-  This is a footer
+  <p>Created by Filip Mirdita with Special Thanks to: <br>
+    <ul>
+      <li>dneustadt (flyout mobile menu) </li>
+      <li>Richard Womersley ("The Matrix Text Effect") </li>
+      <li>cssdeck.com (matrix background) </li>
+    </ul>
+  </p>
+  <a href="#top" class="scroll-nav__link">Back to Top</a>
 </div>
 
 </body>

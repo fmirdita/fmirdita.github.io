@@ -3,7 +3,9 @@ $(document).ready(function() {
   nav_top_margin = $('.header').cssNumber('height') - $('nav').cssNumber('height') ;
   $(window).scroll(function () {
 
-    // console.log($(window).scrollTop(), nav_top_margin);
+    console.log($(window).scrollTop(), nav_top_margin);
+    console.log($('.matrix').cssNumber('height'));
+
 
     if ($(window).scrollTop() > nav_top_margin) {
       $('.scroll-nav').addClass('navbar-fixed');
@@ -11,6 +13,14 @@ $(document).ready(function() {
     if ($(window).scrollTop() < nav_top_margin) {
       $('.scroll-nav').removeClass('navbar-fixed');
     }
+    if ($(window).scrollTop() > 381){
+      $('#matrix').addClass('matrix-fixed');
+    }
+    if ($(window).scrollTop() < 381){
+      $('#matrix').removeClass('matrix-fixed');
+    }
+
+
   });
 
   setInterval( function() {
@@ -69,7 +79,7 @@ window.onload=function() {
     ma_tab=document.createElement("table");
     ma_tab.setAttribute("border", 0);
     ma_tab.setAttribute("align", effectalign);
-    ma_tab.style.backgroundColor="#000000";
+    ma_tab.style.backgroundColor="rgba(16,16,16,1)";
     ma_bod=document.createElement("tbody");
     for (x=0; x<rows; x++) {
       ma_row=document.createElement("tr");
@@ -85,7 +95,7 @@ window.onload=function() {
     ma_tab.appendChild(ma_bod);
     matrix.appendChild(ma_tab);
   } else {
-    ma_tab='<ta'+'ble align="'+effectalign+'" border="0" style="background-color:#000000">';
+    ma_tab='<ta'+'ble align="'+effectalign+'" border="0" style="background-color:#EEE">';
     for (var x=0; x<rows; x++) {
       ma_tab+='<t'+'r>';
       for (var y=0; y<columns; y++) {
@@ -226,7 +236,7 @@ var letters = Array(256).join(1).split('');
 
   var rainbow = true;
 var draw = function () {
-  rain.getContext('2d').fillStyle='rgba(0,0,0,.04)';   // last number controls how fast text fades
+  rain.getContext('2d').fillStyle='rgba(16,16,16,.1)';   // last number controls how fast text fades
   rain.getContext('2d').fillRect(0,0,width,height);
   rain.getContext('2d').fillStyle= (rainbow) ? arr[curr_color] : '#0F0';
   letters.map(function(y_pos, index){
