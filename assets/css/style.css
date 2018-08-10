@@ -320,5 +320,19 @@ textarea {
   form{
     min-width: inherit;
   }
+  
+    form{
+    min-width: inherit;
+  }
+
+  input.field, textarea{
+    min-width: 10px;
+    max-width: 100%;
+  }
+
+  .email {
+    letter-spacing: .05em;
+  }
+
 
 }
