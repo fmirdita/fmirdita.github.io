@@ -3,8 +3,8 @@ $(document).ready(function() {
   nav_top_margin = $('.header').cssNumber('height') - $('nav').cssNumber('height') ;
   $(window).scroll(function () {
 
-    console.log($(window).scrollTop(), nav_top_margin);
-    console.log($('.matrix').cssNumber('height'));
+    // console.log($(window).scrollTop(), nav_top_margin);
+    // console.log($('.matrix').cssNumber('height'));
 
 
     if ($(window).scrollTop() > nav_top_margin) {
