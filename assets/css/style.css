@@ -271,7 +271,7 @@ section:last-of-type {
   transition: all .3s ease;
 }
 
-.list {
+.list, .proj-info {
   margin: auto;
   margin-top: 1em;
   width: 85%;
@@ -450,6 +450,10 @@ textarea {
   height: 8em;
 }
 
+.project {
+  width: 30em;
+}
+
 .project .title {
   font-size: 1.2em;
   text-align: center;
@@ -481,6 +485,17 @@ p.proj-desc {
   max-width: 80%;
   font-size: 1em;
   line-height: 1em;
+}
+
+.git-link {
+  height: 2.5em;
+  transform: translate(-5em, 7.5em);
+  z-index: 12;
+}
+
+.git-link:hover {
+  height: 3em;
+  transform: translate(-4.5em, 6.5em);
 }
 
 ::-webkit-input-placeholder {
@@ -563,11 +578,14 @@ p.proj-desc {
     background: var(--primary-color);
   }
 
-  .card {
-  }
-
   .section {
     width: 100%;
   }
 
+  .project {
+    width: 15em;
+  }
+  .container {
+    margin: auto 1em;
+  }
 }
