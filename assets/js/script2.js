@@ -51,9 +51,17 @@ $(document).ready(function() {
   });
 
   $('nav li').click( function() {
-    console.log($(this));
     $(this).closest('ul').find($('.active')).removeClass('active');
     $(this).addClass('active');
+    $('html, body').animate({
+      scrollTop: $("#"+$(this).text().toLowerCase()).offset().top
+      }, 2000);
+  });
+
+  $('.top-link').click( function() {
+    $('html, body').animate({
+      scrollTop: 0
+      }, 2000);
   })
 
 });

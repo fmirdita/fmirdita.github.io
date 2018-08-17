@@ -5,7 +5,9 @@ $(document).ready(function() {
 
     // console.log($(window).scrollTop(), nav_top_margin);
     // console.log($('.matrix').cssNumber('height'));
-
+    var parallax = $(window).scrollTop()/5;
+    $('#rain').css('top', parallax*-1);
+    console.log($('#rain').css('top'), $(window).scrollTop());
 
     if ($(window).scrollTop() > nav_top_margin) {
       $('nav').addClass('navbar-fixed');

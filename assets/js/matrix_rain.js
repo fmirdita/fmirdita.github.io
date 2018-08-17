@@ -11,10 +11,9 @@ var line_height = 12;
 var letter_spacing = 8;
 
 var width = rain.width = window.screen.width;
-var height = rain.height = window.screen.height;
+var height = rain.height = window.screen.height*2.2;
 var num_cols = width/letter_spacing;
 var letters = Array(num_cols).join(1).split('');
-console.log(width, num_cols);
 var rain_speed = 40;
 
 var curr_color = 0, curr_letter = 0;
@@ -34,7 +33,7 @@ setInterval( function() {
 
 var draw = function () {
   var ctx = rain.getContext('2d')
-  ctx.fillStyle='rgba(16,16,16,.15)';   // last number controls how fast text fades
+  ctx.fillStyle='rgba(16,16,16,.12)';   // last number controls how fast text fades
   ctx.fillRect(0,0,width,height);
   ctx.fillStyle= (rainbow_mode) ? arr[curr_color] : color;
   ctx.font = ".7em Courier";
