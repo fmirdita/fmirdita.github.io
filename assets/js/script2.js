@@ -54,7 +54,7 @@ $(document).ready(function() {
     $(this).closest('ul').find($('.active')).removeClass('active');
     $(this).addClass('active');
     $('html, body').animate({
-      scrollTop: $("#"+$(this).text().toLowerCase()).offset().top
+      scrollTop: $("#"+$(this).text().toLowerCase()).offset().top - 72
       }, 2000);
   });
 
