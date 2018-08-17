@@ -12,7 +12,10 @@ $(document).ready(function() {
 
     // console.log($(window).scrollTop(), nav_top_margin);
     // console.log($('.matrix').cssNumber('height'));
-
+    if (!isMobile) {
+      var parrallax = -1*$(window).scrollTop()/5;
+      $('#rain').css('top', parrallax);
+    }
 
 
     if ($(window).scrollTop() > nav_top_margin) {

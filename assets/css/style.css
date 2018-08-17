@@ -428,15 +428,6 @@ form {
   border: 2px solid #666
 }
 
-label {
-  color: #bbb;
-  width: 100px;
-  margin: .5em .5em;
-  margin-top: 0;
-  display: inline-block;
-  vertical-align: top;
-}
-
 input, textarea, .recaptcha, button {
   margin: 5px 0;
   padding: 5px;
@@ -455,12 +446,8 @@ input.field, textarea {
   max-width: 50%;
 }
 
-input[name=subject], textarea {
-  width: 73%;
-}
-
 textarea {
-  height: 10em;
+  height: 8em;
 }
 
 .project .title {
@@ -494,6 +481,22 @@ p.proj-desc {
   max-width: 80%;
   font-size: 1em;
   line-height: 1em;
+}
+
+::-webkit-input-placeholder {
+   text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-align: center;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;
+}
+
+:-ms-input-placeholder {
+   text-align: center;
 }
 
 
