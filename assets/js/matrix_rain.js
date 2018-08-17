@@ -12,7 +12,7 @@ var letter_spacing = 8;
 
 var width = rain.width = window.screen.width;
 var height = rain.height = window.screen.height*2.2;
-var num_cols = width/letter_spacing;
+var num_cols = Math.round(width/letter_spacing);
 var letters = Array(num_cols).join(1).split('');
 var rain_speed = 40;
 
