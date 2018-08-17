@@ -1,0 +1,69 @@
+/*RESET*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent;} body {line-height: 1;}ol, ul{list-style:none;} blockquote, q{quotes:none;} blockquote:before, blockquote:after, q:before, q:after{content:'';content:none;} :focus{outline:0;} ins{text-decoration:none;} del{text-decoration:line-through;} table{border-collapse:collapse; border-spacing:0;}
+
+#red, #green, #blue {
+  float: left;
+  clear: left;
+  width: 300px;
+  margin: 15px;
+}
+#swatch {
+  width: 120px;
+  height: 100px;
+  margin-top: 18px;
+  margin-left: 350px;
+  background-image: none;
+}
+#red .ui-slider-range { background: #b00; }
+#red .ui-slider-handle { border-color: #f00; }
+#green .ui-slider-range { background: #0b0; }
+#green .ui-slider-handle { border-color: #0f0; }
+#blue .ui-slider-range { background: #00b; }
+#blue .ui-slider-handle { border-color: #00f; }
+
+.toggle {
+  height: 2em;
+  width: 4em;
+  background: lightgrey;
+  border-radius: 1em;
+  float: right;
+  margin: 1em;
+}
+
+.circle {
+  background: white;
+  height: 1.6em;
+  width: 1.6em;
+  border-radius: 1em;
+  margin: .2em;
+  float: left;
+}
+
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+
+  #rain {
+    area: matrix;
+    place-self: stretch stretch;
+  }
+
+  .controls {
+    grid-area: controls;
+    background: #333;
+    place-self: stretch stretch;
+  }
+
+  .content-grid {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    display: grid;
+
+    grid-auto-flow: column;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr;
+    grid-template-areas:
+      "matrix matrix matrix"
+      "controls controls controls";
+  }
+
+}

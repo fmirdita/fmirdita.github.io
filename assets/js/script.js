@@ -8,10 +8,10 @@ $(document).ready(function() {
 
 
     if ($(window).scrollTop() > nav_top_margin) {
-      $('.scroll-nav').addClass('navbar-fixed');
+      $('nav').addClass('navbar-fixed');
     }
     if ($(window).scrollTop() < nav_top_margin) {
-      $('.scroll-nav').removeClass('navbar-fixed');
+      $('nav').removeClass('navbar-fixed');
     }
     if ($(window).scrollTop() > 381){
       $('#matrix').addClass('matrix-fixed');
@@ -45,29 +45,23 @@ $(document).ready(function() {
 
 });
 
-jQuery.fn.cssNumber = function(prop){
-    var v = parseInt(this.css(prop),10);
-    return isNaN(v) ? 0 : v;
-};
-
-
-<!--
-var rows=3; // must be an odd number
-var speed=20; // lower is faster
-var reveal=2; // between 0 and 2 only. The higher, the faster the word appears
-var effectalign="center"; //enter "center" to center it.
-
 /***********************************************
 * The Matrix Text Effect- by Richard Womersley (http://www.mf2fm.co.uk/rv)
 * This notice must stay intact for use
 * Visit http://www.dynamicdrive.com/ for full source code
 ***********************************************/
 
+var rows=3; // must be an odd number
+var speed=20; // lower is faster
+var reveal=2; // between 0 and 2 only. The higher, the faster the word appears
+var effectalign="center"; //enter "center" to center it.
+
 var w3c=document.getElementById && !window.opera;;
 var ie45=document.all && !window.opera;
 var ma_tab, matemp, ma_bod, ma_row, x, y, columns, ma_txt, ma_cho;
 var m_coch=new Array();
 var m_copo=new Array();
+
 window.onload=function() {
 	if (!w3c && !ie45) return
   var matrix=(w3c)?document.getElementById("matrix"):document.all["matrix"];
@@ -208,42 +202,3 @@ function zoomer(ycol) {
   }
 }
 // -->
-
-/*******
-http://cssdeck.com/labs/the-matrix
-********/
-
-var width = rain.width = window.screen.width;
-var height = rain.height = $('.header').cssNumber('height');
-var letters = Array(256).join(1).split('');
-
-  var arr = [
-'#F0F',
-'#00F',
-'#0FF',
-'#0F0',
-'#FF0',
-'#F00'
-];
-
-
-
-  var curr_color = 0;
-  setInterval( function() {
-    curr_color += 1;
-    curr_color %= 6;
-  }, 34);
-
-  var rainbow = true;
-var draw = function () {
-  rain.getContext('2d').fillStyle='rgba(16,16,16,.1)';   // last number controls how fast text fades
-  rain.getContext('2d').fillRect(0,0,width,height);
-  rain.getContext('2d').fillStyle= (rainbow) ? arr[curr_color] : '#0F0';
-  letters.map(function(y_pos, index){
-    text = String.fromCharCode(48+Math.random()*2); //1's and 0s
-    x_pos = index * 10; // number indicates text frame width. overlaps < ft size
-    rain.getContext('2d').fillText(text, x_pos, y_pos);
-    letters[index] = (y_pos > 758 + Math.random() * 1e4) ? 0 : y_pos + 10;
-  });
-};
-setInterval(draw, 33);

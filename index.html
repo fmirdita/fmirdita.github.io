@@ -16,6 +16,7 @@
   <!-- Flyout bug fix for Chrome -->
   <script> </script>
 
+  <link rel="stylesheet" href="assets/css/matrix_rain.css">
   <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
@@ -37,10 +38,11 @@
     </li>
     <li>
       <ul>
-        <li><a href="#scrollNav-1">About Me</a></li>
-        <li><a href="#scrollNav-2">Technical Skills</a></li>
-        <li><a href="#scrollNav-3">Projects</a></li>
-        <li><a href="#scrollNav-4">Contact</a></li>
+        <li><a href="#about_me">About Me</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Technical Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
      </ul>
    </li>
   </ul>
@@ -51,21 +53,38 @@
 <canvas id="rain"></canvas>
 
 <div class="header">
+  <a href="#about_me">
   <div class="cover">
-    <a href="#scrollNav-1"><img id="headshot" src="./assets/img/pic.png" alt="HTML5" />e</a>
+    <img id="headshot" src="./assets/img/pic.png" alt="HTML5"/>
     <div id="matrix">Filip Mirdita</div>
   </div>
+  </a>
 </div>
 
-<article id="#content" class="content">
+<nav >
+  <ul>
+    <a href="#education"><li>Education</li></a>
+    <a href="#skills"><li>Skills</li></a>
+    <a href="#projects"><li>Projects</li></a>
+    <a href="#contact"><li>Contact</li></a>
+  </ul>
+</nav>
 
-  <h2>About Me</h2>
+<article class="content">
+  <section id="about_me">
+  <h1>Intro</h1>
+  <div class="divider"></div>
+
+  <p>Hi, I'm Filip.</p>
+
   <p>
-    I'm a full-stack software engineer and cognitive scientist who loves the intersection of the mind and technology.
+    I'm a full-stack software engineer and cognitive scientist fascinated with the intersection of mind and technology. I love finding creative,
+    novel solutions to problems, and then using <span class='magic' onClick="scrollTo(#projects)">magic 1's and 0's</span> to make the magic happen.
   </p>
   <p>
-    When I'm not coding, I like to learn by exploring the world and asking the big questions?
-    What is the meaning of Can I pet your dog?
+    When I'm not working or learning at home, I'm out by exploring the world and traveling. I love to be spontaneous, and I don't consider it an
+    adventure unless I get lost at least once. I'm happiest perched high up somewhere with a view, laying on the beach, or surrounded by trees– as long as
+    I've got some friends or a good book. 
   </p>
   <p>
     My current hobbies include playing <a href="https://boardgamegeek.com/boardgame/218603/photosynthesis">Photosynthesis</a> and other board games,
@@ -73,74 +92,76 @@
     and roller skating at the <a href="http://www.churchof8wheels.com">Church of 8 Wheels</a>.
   </p>
 
-  <h3>Education</h3>
-  <p>University of California, Berkeley, Class of 2018 </p>
-  <p>Computer Science and Cognitive Science. Bachelor of Arts</p>
+</section>
 
+<section id="education" class="carousel">
+  <h1>Education</h1>
+  <div class="divider"></div>
+  <div id="school">
+    <p>University of California, Berkeley, Class of 2018 </p>
+    <p>Computer Science and Cognitive Science, Bachelor of Arts</p>
+  </div>
   <div class="container">
-    <div class="card-overlay">
-      <div class="plus">
-        <img src="./assets/img/+.png"/>
-      </div>
-    </div>
-    <div class="course card">
-    <img id="brain" src="./assets/img/brain.png" alt="HTML5" />
-    <h3>Cognitive Science</h3>
-    <ul class="course list">
+    <div class="card-overlay"></div>
+    <!-- <div class="plus">
+      <img src="./assets/img/+.png"/>
+    </div> -->
+    <div class="card">
+    <img id="brain" class="icon" src="./assets/img/brain.png" alt="HTML5" />
+    <ul class="courses list">
+      <h3>Cognitive Science</h3>
       <li>Cognitive Neuroscience</li>
-      <li>Introduction to Cognitive Science</li>
-      <li>Introduction to Linguistic Science</li>
       <li>Philosophy of Mind</li>
+      <li>Social Cognition</li>
       <li>Music Perception and Cognition</li>
       <li>Perception</li>
-      <li>Psychology of Sleep</li>
-      <li>Social Cognition</li>
+      <li>Introduction to Linguistic Science</li>
       <li>Social Networks</li>
+      <li>Psychology of Sleep</li>
+      <li>Introduction to Cognitive Science</li>
     </ul>
   </div>
   </div>
 
   <div class="container">
-      <div class="card-overlay">
-        <div class="plus">
-          <img src="./assets/img/+.png"/>
-        </div>
-      </div>
-    <div class="course card">
-      <img id="lamda" src="./assets/img/lambda.png" alt="HTML5" />
-    <h3>Computer Science</h3>
-      <ul class="course list">
+      <div class="card-overlay"></div>
+      <!-- <div class="plus">
+        <img src="./assets/img/+.png"/>
+      </div> -->
+    <div class="card">
+      <img id="lamda" class="icon" src="./assets/img/lambda.png" alt="HTML5" />
+      <ul class="courses list">
+        <h3>Computer Science</h3>
         <li>Computer Security</li>
+        <li>User Interface Design and Development</li>
         <li>Artificial Intelligence</li>
-        <li>iOS Development</li>
-        <li>Web Design</li>
         <li>Data Structures and Programming Methodology</li>
+        <li>Software Engineering</li>
+        <li>iOS Development</li>
         <li>Discrete Mathematics and Probability Theory</li>
-        <li>Artificial Intelligence</li>
         <li>Efficient Algorithms and Intractable Problems</li>
         <li>Internet Architecture and Protocols</li>
         <li>Machine Structures</li>
+        <li>Structure and Interpretation of Computer Programs</li>
         <li>Probability and Random Processes</li>
         <li>Linear Algebra and Differential Equations</li>
+        <li>Web Design</li>
         <li>Calculus</li>
-        <li>Software Engineering</li>
         <li>Linear Algebra and Differential Equations</li>
-        <li>User Interface Design and Development</li>
-        <li>Structure and Interpretation of Computer Programs</li>
       </ul>
   </div>
   </div>
 
   <div class="container">
     <div class="card-overlay">
-      <div class="plus">
+      <!-- <div class="plus">
         <img src="./assets/img/+.png"/>
-      </div>
+      </div> -->
     </div>
-    <div class="course card">
-    <img id="world" src="./assets/img/world.png" alt="HTML5" />
-    <h3>Languages/ Other</h3>
-    <ul class="course list">
+    <div class="card">
+      <img id="world" class="icon" src="./assets/img/world.png" alt="HTML5" />
+    <ul class="courses list">
+      <h3>Languages/ Other</h3>
       <li>Advanced French Conversation</li>
       <li>Advanced Intermediate French</li>
       <li>Intensive German B2</li>
@@ -153,8 +174,13 @@
   </div>
 
 </div>
+</section>
 
-  <h2>Skills</h2>
+<section id="skills">
+
+  <h1>Technical Skills</h1>
+  <div class="divider"></div>
+
   <h3> Programming Languages </h3>
   <p> Advanced: Python, Java </p>
   <p> Proficient: C, Ruby, Javascript </p>
@@ -164,11 +190,15 @@
   <p> IDEs: IntelliJ/ PyCharm, Eclipse </p>
   <p> Ticketing: Salesforce, JIRA </p>
   <p> Dev Practices: Agile Sprints, RESTful APIs, Test Driven Development <p>
+</section>
 
-  <h2> Projects </h2>
+<section id="projects">
+  <h1> Projects </h1>
+  <div class="divider"></div>
 
+  <div class="container">
   <div class="project card">
-    <h3 class="title"> The DatabAIS </h3>
+    <h3 class="title"><a href="https://github.com/fmirdita/The_DatabAIS"> The DatabAIS</a> </h3>
     <div class="proj-date">Nov 2017 - Present</div>
     <div class="proj-pos">Full-Stack Developer</div>
     <div class="proj-type">Django Web App</div>
@@ -178,9 +208,11 @@
       Provides key analytics for event attendance and service utilization of the program.
     </p>
   </div>
+</div>
 
+<div class="container">
   <div class="project card">
-    <h3 class="title">Personal Website</h3>
+    <h3 class="title"><a href="https://fmirdita.github.io">Personal Website</a></h3>
     <div class="proj-date">Aug 2018</div>
     <div class="proj-pos">Full-Stack Developer</div>
     <div class="proj-type">Static Website</div>
@@ -189,9 +221,11 @@
       This website I built from the ground up, using both original code and modified preexisting modules.
     </p>
   </div>
+</div>
 
+<div class="container">
   <div class="project card">
-    <h3 class="title"> Secure Drop & Share</h3> <!--161 Project 2 -->
+    <h3 class="title"><a href="https://github.com/fmirdita/Secure-Drop-and-Share">Secure Drop & Share</a></h3> <!--161 Project 2 -->
     <div class="proj-date">Feb - March 2018</div>
     <div class="proj-pos">Back-End Developer</div>
     <div class="proj-type">CS-161: Security (class project)</div>
@@ -202,20 +236,27 @@
       and revoking of sharing priveleges between users.
     </p>
   </div>
+</div>
 
+
+  <div class="container">
   <div class="project card">
     <h3 class="title"><a href="http://alzaboutme.herokuapp.com/">AlzAboutMe</a></h3> <!--169 -->
+    <a href="https://github.com/EzzySri/AlzAboutMe" >Link to Github Repository</a>
     <div class="proj-date">Sep - Nov 2016</div>
     <div class="proj-pos">Full-Stack Developer</div>
     <div class="proj-type">Ruby on Rails Web App (class project)</div>
     <div class="proj-langs">Ruby, HTML, CSS, Javascript, Cucumber and Capybara for TDD</div>
     <p class="proj-desc">
-      Web app for patients with dimensia and Alzheimers. The app gathers important
+      Web app for patients with dimentia and Alzheimers. The app gathers important
       info from patients using a Life-Story journaling, which helps patients via therapy while providing
       families and caregivers with long-lasting, valuable records of the thoughts and memories of their loved ones.
     </p>
   </div>
+</div>
 
+
+  <div class="container">
   <div class="project card">
     <h3 class="title"> Autism Buddy</h3> <!--160 -->
     <div class="proj-date">March - May 2016</div>
@@ -228,7 +269,10 @@
       families and caregivers with much-appreciated, long-lasting records of the thoughts and memories of their loved ones.
     </p>
   </div>
+</div>
 
+
+  <div class="container">
   <div class="project card">
     <h3 class="title"> Politik </h3>  <!--160 -->
     <div class="proj-date">Feb - March 2016</div>
@@ -240,7 +284,10 @@
       Users are able to seemlessly transistion between browsing information on their android phone and android wearable device.
     </p>
   </div>
+</div>
 
+
+  <div class="container">
   <div class="project card">
     <h3 class="title"> Pacman AI </h3>
     <div class="proj-date">July - Aug 2016</div>
@@ -252,17 +299,24 @@
       complex probability tables, used Classification algorithms, and Machine Learning and Markov Chains in Multiagent and Adversarial AI.
     </p>
   </div>
+</div>
 
-  <h2> Contact </h1>
+</section>
+
+<section id="contact">
+
+  <h1> Contact </h1>
+    <div class="divider"></div>
+
     <p> Feel free to checkout my Github or reach out via LinkedIn, email, or slide in my DM's by filling out the form below : ) </p>
     <ul id="links">
       <a class="email" href="mailto:filip.mirdita@gmail.com">filip.mirdita@gmail.com</a> <br>
-      <li><a  href="github.com/fmirdita"><img src="assets/img/github.png" alt="HTML5"/>Github</a></li>
-      <li><a href="linkedin.com/in/mirditaf"><img src="assets/img/linkedin.png" alt="HTML5"/>LinkedIn</a></li>
+      <li><a  href="github.com/fmirdita"><img class="icon-link" src="assets/img/github.png" alt="HTML5"/>Github</a></li>
+      <li><a href="linkedin.com/in/mirditaf"><img class="icon-link" src="assets/img/linkedin.png" alt="HTML5"/>LinkedIn</a></li>
     </ul>
 
   <form action='https://www.getform.org/f/7805564e-6f77-479e-9780-e14430d735ac' method="POST">
-    <div id="prompt">What did think of my Website?</div>
+    <div id="prompt">What was your favorite part about my website? Would you hire me?</div>
     <label for="name">Name:</label>
     <input id="name" type="text" name="name" class="field" required /><br/>
 
@@ -275,9 +329,9 @@
     <label for="message">Message:</label>
     <textarea id="message" name="message" required ></textarea><br/>
   </form>
-
+</section>
 <!-- END OF CONTENT -->
-
+<a class="top-link" href="#"><h2>Back to Top</h2></a>
 </article>
 
 <div class="footer">
@@ -285,9 +339,6 @@
     © Filip Mirdita, Copyright August 2018
   </div>
 </div>
-
-</body>
-
 
 <!--
     SPECIAL THANKS TO:
@@ -298,12 +349,11 @@
     https://www.moillusions.com/penrose-triangle-animation/attachment/92/
 -->
 
-</div>
-
 </body>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src="assets/js/jquery.scrollNav.min.js"></script>
+  <!-- <script src="assets/js/jquery.scrollNav.min.js"></script> -->
+  <script src="assets/js/matrix_rain.js"></script>
   <script src="assets/js/script.js"></script>
   <script src="assets/js/script2.js"></script>
 
