@@ -51,19 +51,53 @@ var raining = setInterval(draw, rain_speed);
 
 $(window).resize( function() {
   console.log(window.screen.width);
-  clearInterval(rain_dynamics);
-  clearInterval(raining);
 
-  width = rain.width = window.screen.width;
-  height = rain.height = window.screen.height*2.5;
-  num_cols = Math.round(width/letter_spacing);
-  letters = Array(num_cols).join(1).split('');
+});
 
-  raining = setInterval(draw, rain_speed);
-  rain_dynamics = setInterval( function() {
-    curr_color += 1;
-    curr_letter += 1;
-    curr_color %= 6;
-    curr_letter %= word.length;
-  }, rain_speed+1);
+// Find matches
+var mql = window.matchMedia("(orientation: portrait)");
+
+// If there are matches, we're in portrait
+if(mql.matches) {
+	// Portrait orientation
+} else {
+	// Landscape orientation
+}
+
+// Add a media query change listener
+mql.addListener(function(m) {
+	if(m.matches) {
+    clearInterval(rain_dynamics);
+    clearInterval(raining);
+
+    width = rain.width = window.screen.width;
+    height = rain.height = window.screen.height*2.5;
+    num_cols = Math.round(width/letter_spacing);
+    letters = Array(num_cols).join(1).split('');
+
+    raining = setInterval(draw, rain_speed);
+    rain_dynamics = setInterval( function() {
+      curr_color += 1;
+      curr_letter += 1;
+      curr_color %= 6;
+      curr_letter %= word.length;
+    }, rain_speed+1);
+	}
+	else {
+    clearInterval(rain_dynamics);
+    clearInterval(raining);
+
+    width = rain.width = window.innerWidth;
+    height = rain.height = window.innerHeight*2.5;
+    num_cols = Math.round(width/letter_spacing);
+    letters = Array(num_cols).join(1).split('');
+
+    raining = setInterval(draw, rain_speed);
+    rain_dynamics = setInterval( function() {
+      curr_color += 1;
+      curr_letter += 1;
+      curr_color %= 6;
+      curr_letter %= word.length;
+    }, rain_speed+1);
+	}
 });
