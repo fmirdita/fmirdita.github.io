@@ -49,8 +49,13 @@ var rain_dynamics = setInterval( function() {
 
 var raining = setInterval(draw, rain_speed);
 
-$(window).resize( function() {
-  if (window.screen.width!=width) {
+// $(window).resize( function() {
+//   if (window.screen.width!=width) {
+
+//   }
+// });
+
+window.addEventListener("orientationchange", function() {
     clearInterval(rain_dynamics);
     clearInterval(raining);
 
@@ -66,5 +71,4 @@ $(window).resize( function() {
       curr_color %= 6;
       curr_letter %= word.length;
     }, rain_speed+1);
-  }
-});
+}, false);
