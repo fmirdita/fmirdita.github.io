@@ -50,21 +50,20 @@ var rain_dynamics = setInterval( function() {
 var raining = setInterval(draw, rain_speed);
 
 $(window).resize( function() {
-  if (window.screen.width!=width) {
-    clearInterval(rain_dynamics);
-    clearInterval(raining);
+  console.log(window.screen.width);
+  clearInterval(rain_dynamics);
+  clearInterval(raining);
 
-    width = rain.width = window.screen.width;
-    height = rain.height = window.screen.height*2.5;
-    num_cols = Math.round(width/letter_spacing);
-    letters = Array(num_cols).join(1).split('');
+  width = rain.width = window.screen.width;
+  height = rain.height = window.screen.height*2.5;
+  num_cols = Math.round(width/letter_spacing);
+  letters = Array(num_cols).join(1).split('');
 
-    raining = setInterval(draw, rain_speed);
-    rain_dynamics = setInterval( function() {
-      curr_color += 1;
-      curr_letter += 1;
-      curr_color %= 6;
-      curr_letter %= word.length;
-    }, rain_speed+1);
-  }
+  raining = setInterval(draw, rain_speed);
+  rain_dynamics = setInterval( function() {
+    curr_color += 1;
+    curr_letter += 1;
+    curr_color %= 6;
+    curr_letter %= word.length;
+  }, rain_speed+1);
 });
