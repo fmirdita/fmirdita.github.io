@@ -3,42 +3,24 @@ $(document).ready(function() {
   $('.magic').hover( function() {
     $(this).addClass('rainbow');
   }, function() {
-    $(this).removeClass('rainbow');
-  });
+      $(this).removeClass('rainbow');
+    });
 
   $('.icon').hover( function() {
     $(this).children($('.plus')).fadeIn(100);
-  }, function () {
-    $(this).children($('.plus')).fadeOut();
-  });
+      }, function () {
+          $(this).children($('.plus')).fadeOut();
+      });
 
-  $('.icon').click( function() {
-    if ($(this).hasClass('.open')) {
+  $('.toggle-icon.icon').click( function() {
+    var card = $(this).parent();
 
-      $(this).parent().siblings($('.card-overlay')).fadeIn();
-
-      var card = $(this).parent();
-
-      card.height(card.height).animate({
-        height: '22em',
-      }, {duration: 300, queue: false});
-
-      $(this).removeClass('.open')
-
+    if (card.hasClass('open')) {
+      collapseCard(card, $(this));
     } else {
-      $(this).parent().siblings($('.card-overlay')).fadeOut();
-
-      var card = $(this).parent();
-      var autoHeight=$(this).siblings($('.list')).height();
-      autoHeight += 250;
-
-      card.height(card.height).animate({
-        height: autoHeight,
-      }, {duration: 300, queue: false});
-
-    $(this).addClass('.open')
-  }
-});
+      expandCard(card, $(this));
+    }
+  });
 
   $('.list').click( function() {
 
@@ -53,9 +35,7 @@ $(document).ready(function() {
   $('nav li').click( function() {
     $(this).closest('ul').find($('.active')).removeClass('active');
     $(this).addClass('active');
-    $('html, body').animate({
-      scrollTop: $("#"+$(this).text().toLowerCase()).offset().top - 72
-      }, 2000);
+    toSection("#"+$(this).text().toLowerCase());
   });
 
   $('.top-link').click( function() {
@@ -65,3 +45,37 @@ $(document).ready(function() {
   })
 
 });
+
+function toSection(el_id, scroll_time=1500) {
+  $('html, body').animate({
+    scrollTop: $(el_id).offset().top - 72
+  }, scroll_time);
+};
+
+function hideDetails() {
+  $('details').removeAttr("open");
+  toSection('#intro', 300);
+};
+
+function collapseCard(card, icon) {
+  card.siblings('.card-overlay').fadeIn();
+  card.height(card.height).animate({
+    height: '16em',
+    width: '16em',
+    }, {duration: 300, queue: false});
+  card.removeClass('open');
+};
+
+function expandCard(card, icon) {
+  card.siblings('.card-overlay').fadeOut();
+
+  var autoHeight=card.children('.card-content').height();
+
+  autoHeight += 200;
+
+  card.height(card.height).animate({
+    height: autoHeight,
+  }, {duration: 300, queue: false});
+
+  card.addClass('open')
+}

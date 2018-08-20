@@ -24,13 +24,6 @@ var word_mode = false;
 var one_zero_mode = true;
 var color = '#0F0'
 
-setInterval( function() {
-  curr_color += 1;
-  curr_letter += 1;
-  curr_color %= 6;
-  curr_letter %= word.length;
-}, rain_speed+1);
-
 var draw = function () {
   var ctx = rain.getContext('2d')
   ctx.fillStyle='rgba(16,16,16,.12)';   // last number controls how fast text fades
@@ -46,4 +39,31 @@ var draw = function () {
     letters[index] = (y_pos > 758 + Math.random() * 1e4) ? 0 : y_pos + line_height;
   });
 };
-setInterval(draw, rain_speed);
+
+var rain_dynamics = setInterval( function() {
+  curr_color += 1;
+  curr_letter += 1;
+  curr_color %= 6;
+  curr_letter %= word.length;
+}, rain_speed+1);
+
+var raining = setInterval(draw, rain_speed);
+
+$(window).resize( function() {
+  console.log(window.screen.width);
+  clearInterval(rain_dynamics);
+  clearInterval(raining);
+
+  width = rain.width = window.screen.width;
+  height = rain.height = window.screen.height*2.5;
+  num_cols = Math.round(width/letter_spacing);
+  letters = Array(num_cols).join(1).split('');
+  
+  raining = setInterval(draw, rain_speed);
+  rain_dynamics = setInterval( function() {
+    curr_color += 1;
+    curr_letter += 1;
+    curr_color %= 6;
+    curr_letter %= word.length;
+  }, rain_speed+1);
+});
