@@ -640,7 +640,7 @@ textarea {
 
   ul.menu, li.start  {
     background: #0d0 !important;
-    border-bottom-right-radius: 2em;
+    border-radius: 2em;
   }
 
   li.start {
@@ -670,6 +670,7 @@ textarea {
     display: block;
     position: fixed;
     z-index: 11;
+    transform: translate(.5em, .5em);
   }
 
   #flyout-menu .menu {
@@ -753,6 +754,10 @@ textarea {
     overflow: scroll;
   }
   .proj-pos::before, .proj-date::before {content: "";}
+
+  .proj-langs {
+    color: #2e2;
+  }
 
   .proj-info {
     margin: 0;
