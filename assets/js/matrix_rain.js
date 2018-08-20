@@ -53,6 +53,7 @@ var mql = window.matchMedia("(orientation: portrait)");
 
 mql.addListener(function(m) {
 	if(m.matches) {
+    // Portrait
     clearInterval(rain_dynamics);
     clearInterval(raining);
 
@@ -70,11 +71,12 @@ mql.addListener(function(m) {
     }, rain_speed+1);
 	}
 	else {
+    //Landscape
     clearInterval(rain_dynamics);
     clearInterval(raining);
 
-    width = rain.width = window.screen.width;
-    height = rain.height = window.screen.height*2.5;
+    height = rain.width = window.screen.width;
+    width = rain.height = window.screen.height*2.5;
     num_cols = Math.round(width/letter_spacing);
     letters = Array(num_cols).join(1).split('');
 
