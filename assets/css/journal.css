@@ -1,0 +1,53 @@
+/* Shared reading surfaces; homepage rules are scoped to avoid restyling the portfolio. */
+.journal-page {
+  --paper: #141716; --ink: #f0f3ee; --muted: #b7c3b9; --accent: #8deb9b; --rule: #455149;
+  color-scheme: dark; margin: 0; background: var(--paper); color: var(--ink);
+  font: 1rem/1.7 system-ui, sans-serif; min-height: 100svh;
+}
+.journal-page[data-site="company"] { --paper: #10251c; --accent: #c5ee78; --rule: #536759; }
+.journal-page *, .publishing-section *, .profile-links * { box-sizing: border-box; }
+.journal-page a { color: var(--accent); text-underline-offset: .25em; overflow-wrap: anywhere; }
+.journal-page a:hover { color: #fff; }
+.journal-page a:focus-visible, .publishing-section a:focus-visible, .profile-links a:focus-visible {
+  outline: 2px solid currentColor; outline-offset: 5px;
+}
+.journal-header, .journal-main, .journal-footer { width: min(100% - 3rem, 68rem); margin-inline: auto; }
+.journal-header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 1rem; padding-block: 1.7rem; border-bottom: 1px solid var(--rule); }
+.journal-header .site-name { font-weight: 650; text-decoration: none; color: var(--ink); }
+.journal-header nav { display: flex; gap: 1.5rem; }
+.journal-main { min-height: 65vh; padding-block: clamp(3rem, 8vw, 6rem); }
+.journal-page h1 { font: 400 clamp(2.75rem, 7vw, 5.8rem)/1.06 Georgia, serif; letter-spacing: -.045em; max-width: 17ch; margin: .5rem 0 1.5rem; overflow-wrap: anywhere; }
+.journal-page h2 { font: 400 clamp(1.65rem, 4vw, 2.5rem)/1.25 Georgia, serif; margin: 2.5rem 0 1rem; }
+.journal-page h3 { font-size: 1.2rem; line-height: 1.4; }
+.journal-page .eyebrow { color: var(--accent); letter-spacing: .06em; text-transform: uppercase; font: .875rem/1.5 ui-monospace, monospace; margin: 0; }
+.journal-page .lede { font-size: clamp(1.1rem, 2.5vw, 1.4rem); color: var(--muted); max-width: 48rem; }
+.journal-page .empty { border-top: 1px solid var(--rule); margin-top: 3rem; padding-top: 1.5rem; color: var(--muted); }
+.journal-page .story-list { list-style: none; padding: 0; margin: 3rem 0 0; }
+.journal-page .story-list li { border-top: 1px solid var(--rule); padding-block: 1.75rem; }
+.journal-page .story-list h2 { margin: .5rem 0; font-size: clamp(1.5rem, 4vw, 2.3rem); }
+.journal-page .story-list p { max-width: 45rem; margin-block: .5rem; }
+.journal-page .story-date { color: var(--muted); font-size: .9375rem; }
+.journal-page .prose { max-width: 44rem; font-size: 1.125rem; }
+.journal-page .prose p { margin-block: 1.4rem; }
+.journal-page .prose img { max-width: 100%; height: auto; }
+.journal-page .prose pre { overflow-x: auto; padding: 1rem; border: 1px solid var(--rule); }
+.journal-page .prose blockquote { border-left: 2px solid var(--accent); margin-inline: 0; padding-left: 1.5rem; color: var(--muted); }
+.journal-page .related { border-top: 1px solid var(--rule); margin-top: 3rem; padding-top: .5rem; max-width: 44rem; }
+.journal-footer { border-top: 1px solid var(--rule); padding-block: 1.5rem 2.5rem; }
+.journal-footer p { color: var(--muted); }
+.profile-links { display: flex; flex-wrap: wrap; justify-content: inherit; gap: .65rem 1.5rem; list-style: none; padding: 0; margin: 1.25rem 0; }
+.profile-links li { margin: 0; padding: 0; }
+.profile-links a { display: inline-block; padding-block: .35rem; text-decoration: underline; text-underline-offset: .25em; }
+.publishing-section { padding-block: 1.5rem; }
+.publishing-section p { line-height: 1.65; }
+.publishing-section .journal-link { display: inline-block; margin-top: 1rem; padding-block: .5rem; text-decoration: underline; text-underline-offset: .3em; }
+#writing.publishing-section { text-align: center; border-block: 1px solid #455149; padding: 2rem 1rem 3rem; }
+#writing.publishing-section p, #contact > p { min-width: 0; width: min(100% - 2rem, 44rem); }
+#writing .journal-link { font-size: 1.125rem; color: #8deb9b; }
+#contact .profile-links { justify-content: center; }
+.journal-page .skip-link { position: absolute; top: -8rem; left: 1rem; padding: .7rem 1rem; background: var(--paper); z-index: 5; }
+.journal-page .skip-link:focus { top: 1rem; }
+@media (max-width: 36rem) {
+  .journal-header, .journal-main, .journal-footer { width: calc(100% - 2rem); }
+  .journal-page .prose { font-size: 1rem; }
+}
